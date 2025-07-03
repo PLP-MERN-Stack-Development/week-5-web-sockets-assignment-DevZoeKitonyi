@@ -3,7 +3,7 @@ import { Hash, Users, Settings, LogOut } from 'lucide-react';
 import { useChatStore } from '../store/chatStore';
 import { useSocket } from '../hooks/useSocket';
 
-export const Sidebar: React.FC = () => {
+export const Sidebar = () => {
   const { user, rooms, currentRoom, roomUsers } = useChatStore();
   const { joinRoom } = useSocket();
 

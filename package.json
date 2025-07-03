@@ -1,0 +1,28 @@
+{
+  "name": "week-5-web-sockets-assignment-devzoekitonyi",
+  "version": "1.0.0",
+  "description": "A modern, feature-rich real-time chat application built with React, TypeScript, Node.js, and Socket.io. This application provides seamless real-time communication with a beautiful, responsive interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PLP-MERN-Stack-Development/week-5-web-sockets-assignment-DevZoeKitonyi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PLP-MERN-Stack-Development/week-5-web-sockets-assignment-DevZoeKitonyi/issues"
+  },
+  "homepage": "https://github.com/PLP-MERN-Stack-Development/week-5-web-sockets-assignment-DevZoeKitonyi#readme",
+  "dependencies": {
+    "lucide-react": "^0.525.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}

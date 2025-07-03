@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { useChatStore } from '../store/chatStore';
 
 export const useSocket = () => {
-  const socketRef = useRef<Socket | null>(null);
+  const socketRef = useRef<Socket | null>(null) as React.MutableRefObject<Socket | null>;
   const {
     setConnected,
     setRooms,
