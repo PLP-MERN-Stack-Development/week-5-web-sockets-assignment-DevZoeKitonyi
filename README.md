@@ -1,78 +1,188 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19889572&assignment_repo_type=AssignmentRepo)
 # Real-Time Chat Application with Socket.io
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+A modern, feature-rich real-time chat application built with React, TypeScript, Node.js, and Socket.io. This application provides seamless real-time communication with a beautiful, responsive interface.
 
-## Assignment Overview
+## Features
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+### Core Features
+- **Real-time messaging** using Socket.io bidirectional communication
+- **User authentication** with persistent sessions
+- **Multiple chat rooms** with room management
+- **Live user presence** and online status indicators
+- **Typing indicators** showing when users are typing
+- **Message history** with timestamp display
+- **Responsive design** optimized for all devices
+
+### Advanced Features
+- **Private messaging** between users
+- **Real-time notifications** for new messages
+- **User avatars** with emoji selection
+- **Room user lists** showing online participants
+- **Modern UI** with gradient backgrounds and smooth animations
+- **Connection status** indicators
+
+## Technology Stack
+
+### Frontend
+- **React 18** with TypeScript
+- **Tailwind CSS** for styling
+- **Zustand** for state management
+- **Socket.io Client** for real-time communication
+- **Lucide React** for icons
+- **Vite** for build tooling
+
+### Backend
+- **Node.js** with Express
+- **Socket.io** for real-time communication
+- **UUID** for unique identifiers
+- **CORS** for cross-origin requests
 
 ## Project Structure
 
 ```
-socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
+realtime-chat-app/
+├── src/                    # React frontend
+│   ├── components/         # UI components
+│   │   ├── LoginForm.tsx   # User authentication
+│   │   ├── Sidebar.tsx     # Rooms and users sidebar
+│   │   ├── ChatRoom.tsx    # Main chat interface
+│   │   ├── MessageList.tsx # Messages display
+│   │   ├── MessageBubble.tsx # Individual message
+│   │   ├── MessageInput.tsx # Message input form
+│   │   └── TypingIndicator.tsx # Typing indicator
+│   ├── hooks/              # Custom React hooks
+│   │   └── useSocket.ts    # Socket.io connection
+│   ├── store/              # State management
+│   │   └── chatStore.ts    # Zustand store
+│   ├── types/              # TypeScript definitions
+│   │   └── index.ts        # Type definitions
+│   └── App.tsx             # Main application
+├── server/                 # Node.js backend
+│   ├── server.js           # Express server with Socket.io
 │   └── package.json        # Server dependencies
-└── README.md               # Project documentation
+├── package.json            # Frontend dependencies
+└── README.md               # This file
 ```
 
 ## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
-
-## Files Included
-
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
-
-## Requirements
-
+### Prerequisites
 - Node.js (v18 or higher)
 - npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
 
-## Submission
+### Installation
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd realtime-chat-app
+   ```
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+2. **Install dependencies**
+   ```bash
+   # Install frontend dependencies
+   npm install
 
-## Resources
+   # Install server dependencies
+   cd server
+   npm install
+   cd ..
+   ```
 
-- [Socket.io Documentation](https://socket.io/docs/v4/)
-- [React Documentation](https://react.dev/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+3. **Start the development servers**
+   ```bash
+   # Start both client and server concurrently
+   npm run dev
+   ```
+
+   This will start:
+   - Frontend development server on `http://localhost:5173`
+   - Backend server on `http://localhost:3001`
+
+### Manual Setup
+
+If you prefer to run the servers separately:
+
+1. **Start the backend server**
+   ```bash
+   cd server
+   npm start
+   ```
+
+2. **Start the frontend development server**
+   ```bash
+   npm run client
+   ```
+
+## Usage
+
+1. **Login**: Enter your username and choose an avatar
+2. **Join Rooms**: Select from available chat rooms (General, Random, Tech Talk)
+3. **Send Messages**: Type messages and press Enter or click Send
+4. **View Users**: See online users in the sidebar
+5. **Typing Indicators**: See when others are typing in real-time
+
+## API Events
+
+### Client to Server
+- `login` - User authentication
+- `join_room` - Join a specific room
+- `send_message` - Send a message to a room
+- `private_message` - Send a private message
+- `typing_start` - Start typing indicator
+- `typing_stop` - Stop typing indicator
+
+### Server to Client
+- `login_success` - Successful login response
+- `room_messages` - Historical messages for a room
+- `room_users` - List of users in a room
+- `new_message` - New message received
+- `user_joined` - User joined a room
+- `user_left` - User left a room
+- `user_typing` - User started typing
+- `user_stop_typing` - User stopped typing
+- `private_message` - Private message received
+
+## Development
+
+### Adding New Features
+
+1. **Frontend Components**: Add new components in `src/components/`
+2. **Backend Events**: Add new socket events in `server/server.js`
+3. **State Management**: Update store in `src/store/chatStore.ts`
+4. **Types**: Add new TypeScript types in `src/types/index.ts`
+
+### Environment Variables
+
+Create a `.env` file in the root directory for environment-specific configuration:
+
+```env
+VITE_SOCKET_URL=http://localhost:3001
+```
+
+## Production Deployment
+
+### Build the Application
+```bash
+npm run build
+```
+
+### Deploy Options
+- **Frontend**: Deploy the `dist` folder to services like Netlify, Vercel, or GitHub Pages
+- **Backend**: Deploy the `server` folder to services like Heroku, Railway, or DigitalOcean
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test your changes
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the development team.
