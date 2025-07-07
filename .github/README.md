@@ -2,10 +2,18 @@
 
 A modern, feature-rich real-time chat application built with React, TypeScript, Node.js, and Socket.io. This application provides seamless real-time communication with a beautiful, responsive interface.
 
+
+ Live demo;
+
+https://legendary-piroshki-af53cb.netlify.app/
+
+
+file:///C:/Users/user/Pictures/Screenshots/Screenshot%202025-07-07%20192736.png
+
+file:///C:/Users/user/Pictures/Screenshots/Screenshot%202025-07-07%20193638.png
+
+
 ## Features
-
-
-
 
 ### Core Features
 - **Real-time messaging** using Socket.io bidirectional communication
