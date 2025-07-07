@@ -5,7 +5,7 @@ A modern, feature-rich real-time chat application built with React, TypeScript, 
 ## Features
 
 
-file:///C:/Users/user/Pictures/Screenshots/Screenshot%202025-07-07%20192736.png
+
 
 ### Core Features
 - **Real-time messaging** using Socket.io bidirectional communication
