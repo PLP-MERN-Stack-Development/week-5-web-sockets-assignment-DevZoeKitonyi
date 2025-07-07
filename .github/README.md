@@ -8,10 +8,11 @@ A modern, feature-rich real-time chat application built with React, TypeScript, 
 https://legendary-piroshki-af53cb.netlify.app/
 
 
-file:///C:/Users/user/Pictures/Screenshots/Screenshot%202025-07-07%20192736.png
 
-file:///C:/Users/user/Pictures/Screenshots/Screenshot%202025-07-07%20193638.png
+![Screenshot 2025-07-07 192736](https://github.com/user-attachments/assets/9d243d99-0052-4127-b264-f4ada0bb9c75)
 
+
+![Screenshot 2025-07-07 193638](https://github.com/user-attachments/assets/bdfc338a-4a35-473a-80ba-46d93bda58f5)
 
 ## Features
 
